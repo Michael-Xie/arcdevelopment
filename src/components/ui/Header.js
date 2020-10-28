@@ -9,6 +9,11 @@ import Button from "@material-ui/core/Button";
 import { Link } from "react-router-dom";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import Grow from "@material-ui/core/Grow";
+import Paper from "@material-ui/core/Paper";
+import Popper from "@material-ui/core/Popper";
+import MenuList from "@material-ui/core/MenuList";
 
 import logo from "../../assets/logo.svg";
 
@@ -58,6 +63,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.common.blue,
     color: "white",
     borderRadius: "0px",
+    zIndex: 1302,
   },
   menuItem: {
     ...theme.typography.tab,
@@ -87,6 +93,13 @@ export default function Header(props) {
     setAnchorE(null);
     setOpen(false);
   };
+
+  function handleListKeyDown(event) {
+    if (event.key === "Tab") {
+      event.preventDefault();
+      setOpen(false);
+    }
+  }
 
   useEffect(() => {
     if (window.location.pathname === "/" && value !== 0) {
@@ -136,6 +149,7 @@ export default function Header(props) {
                 className={classes.tab}
                 component={Link}
                 onMouseOver={(event) => handleClick(event)}
+                onMouseLeave={() => setOpen(false)}
                 to="/services"
                 label="Services"
               />
@@ -165,7 +179,71 @@ export default function Header(props) {
             >
               Free Estimate
             </Button>
-            <Menu
+            <Popper
+              open={open}
+              anchorEl={anchorE}
+              role={undefined}
+              placement="bottom-start"
+              transition
+              disablePortal
+            >
+              {({ TransitionProps, placement }) => (
+                <Grow
+                  {...TransitionProps}
+                  style={{
+                    transformOrigin: "top left",
+                  }}
+                >
+                  <Paper classes={{ root: classes.menu }} elevation={0}>
+                    <ClickAwayListener onClickAway={handleClose}>
+                      <MenuList
+                        onMouseOver={() => setOpen(true)}
+                        onMouseLeave={handleClose}
+                        disablePadding
+                        autoFocusItem={false}
+                        id="simple-menu"
+                        onKeyDown={handleListKeyDown}
+                      >
+                        <MenuItem
+                          onClick={() => {
+                            handleClose();
+                            setValue(1);
+                          }}
+                          component={Link}
+                          to="/customsoftware"
+                          classes={{ root: classes.menuItem }}
+                        >
+                          Custom Software Development
+                        </MenuItem>
+                        <MenuItem
+                          onClick={() => {
+                            handleClose();
+                            setValue(1);
+                          }}
+                          component={Link}
+                          to="/mobileapps"
+                          classes={{ root: classes.menuItem }}
+                        >
+                          Mobile App Development
+                        </MenuItem>
+                        <MenuItem
+                          onClick={() => {
+                            handleClose();
+                            setValue(1);
+                          }}
+                          component={Link}
+                          to="/websites"
+                          classes={{ root: classes.menuItem }}
+                        >
+                          Website Development
+                        </MenuItem>
+                      </MenuList>
+                    </ClickAwayListener>
+                  </Paper>
+                </Grow>
+              )}
+            </Popper>
+            {/* <Menu
               id="simple-menu"
               anchorEl={anchorE}
               open={open}
@@ -173,52 +251,7 @@ export default function Header(props) {
               classes={{ paper: classes.menu }}
               MenuListProps={{ onMouseLeave: handleClose }}
               elevation={0}
-            >
-              <MenuItem
-                onClick={() => {
-                  handleClose();
-                  setValue(1);
-                }}
-                component={Link}
-                to="/services"
-                classes={{ root: classes.menuItem }}
-              >
-                Services
-              </MenuItem>
-              <MenuItem
-                onClick={() => {
-                  handleClose();
-                  setValue(1);
-                }}
-                component={Link}
-                to="/customsoftware"
-                classes={{ root: classes.menuItem }}
-              >
-                Custom Software Development
-              </MenuItem>
-              <MenuItem
-                onClick={() => {
-                  handleClose();
-                  setValue(1);
-                }}
-                component={Link}
-                to="/mobileapps"
-                classes={{ root: classes.menuItem }}
-              >
-                Mobile App Development
-              </MenuItem>
-              <MenuItem
-                onClick={() => {
-                  handleClose();
-                  setValue(1);
-                }}
-                component={Link}
-                to="/websites"
-                classes={{ root: classes.menuItem }}
-              >
-                Website Development
-              </MenuItem>
-            </Menu>
+            ></Menu> */}
           </Toolbar>
         </AppBar>
       </ElevationScroll>
