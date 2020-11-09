@@ -86,7 +86,15 @@ export default function Footer() {
               component={Link}
               to="/revolution"
             >
-              The Revolution to="/revolution" > Vision
+              The Revolution
+            </Grid>
+            <Grid
+              item
+              className={classes.link}
+              component={Link}
+              to="/revolution"
+            >
+              Vision
             </Grid>
             <Grid
               item
@@ -114,11 +122,14 @@ export default function Footer() {
             <Grid item className={classes.link} component={Link} to="/about">
               History
             </Grid>
+            <Grid item className={classes.link} component={Link} to="/about">
+              Team
+            </Grid>
           </Grid>
         </Grid>
-        <Grid item className={classes.gridItem} component={Link} to="/contact">
+        <Grid item className={classes.gridItem}>
           <Grid container direction="column" spacing={2}>
-            <Grid item className={classes.link}>
+            <Grid item className={classes.link} component={Link} to="/contact">
               Contact Us
             </Grid>
           </Grid>
