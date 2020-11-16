@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   serviceContainer: {
-    marginTop: "12em",
+    marginTop: "10em",
     [theme.breakpoints.down("sm")]: {
       padding: 25,
     },
@@ -48,6 +48,21 @@ export default function Services(props) {
 
   return (
     <Grid container direction="column">
+      <Grid
+        item
+        style={{
+          marginLeft: matchesSM ? 0 : "5em",
+          marginTop: matchesSM ? "1em" : "2em",
+        }}
+      >
+        <Typography
+          align={matchesSM ? "center" : undefined}
+          variant="h2"
+          gutterBottom
+        >
+          Services
+        </Typography>
+      </Grid>
       <Grid item>
         {" "}
         {/*------ iOS/Android Block ------*/}
@@ -56,8 +71,15 @@ export default function Services(props) {
           direction="row"
           className={classes.serviceContainer}
           justify={matchesSM ? "center" : "flex-end"}
+          style={{ marginTop: matchesSM ? "1em" : "5em" }}
         >
-          <Grid item>
+          <Grid
+            item
+            style={{
+              textAlign: matchesSM ? "center" : undefined,
+              width: matchesSM ? undefined : "35em",
+            }}
+          >
             <Typography variant="h4">iOS/Android App Development</Typography>
             <Typography variant="subtitle1" className={classes.subtitle}>
               Extend Functionality. Extend Access. Increase Engagement.
@@ -95,6 +117,7 @@ export default function Services(props) {
               className={classes.icon}
               alt="mobile phone icon"
               src={mobileAppsIcon}
+              width="250em"
             />
           </Grid>
         </Grid>
@@ -159,11 +182,13 @@ export default function Services(props) {
           direction="row"
           className={classes.serviceContainer}
           justify={matchesSM ? "center" : "flex-end"}
+          style={{ marginBottom: "10em" }}
         >
           <Grid
             item
             style={{
               textAlign: matchesSM ? "center" : undefined,
+              width: matchesSM ? undefined : "35em",
             }}
           >
             <Typography variant="h4">Website Development</Typography>
@@ -196,6 +221,7 @@ export default function Services(props) {
               className={classes.icon}
               alt="website icon"
               src={websitesIcon}
+              width="250em"
             />
           </Grid>
         </Grid>
