@@ -13,9 +13,12 @@ import forwardArrow from "../assets/forwardArrow.svg";
 import lightbulb from "../assets/bulb.svg";
 import cash from "../assets/cash.svg";
 import stopwatch from "../assets/stopwatch.svg";
+import roots from "../assets/root.svg";
 
 import documentsAnimation from "../animations/documentsAnimation/data";
 import scaleAnimation from "../animations/scaleAnimation/data.json";
+import automationAnimation from "../animations/automationAnimation/data.json";
+import uxAnimation from "../animations/uxAnimation/data";
 
 const useStyles = makeStyles((theme) => ({
   heading: {
@@ -51,6 +54,24 @@ export default function CustomSoftware(props) {
     loop: true,
     autoPlay: true,
     animationData: scaleAnimation,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const automationOptions = {
+    loop: true,
+    autoPlay: true,
+    animationData: automationAnimation,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const uxOptions = {
+    loop: true,
+    autoPlay: true,
+    animationData: uxAnimation,
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -160,8 +181,8 @@ export default function CustomSoftware(props) {
           </Grid>
         </Grid>
       </Grid>
-      <Grid item container direction="row">
-        <Grid item container className={classes.itemContainer}>
+      <Grid item container direction="row" justify="space-around">
+        <Grid item container className={classes.itemContainer} md>
           <Grid item container direction="column" md>
             <Grid item>
               <Typography variant="h4">Digital Documents & Data</Typography>
@@ -186,7 +207,7 @@ export default function CustomSoftware(props) {
             />
           </Grid>
         </Grid>
-        <Grid item container className={classes.itemContainer}>
+        <Grid item container className={classes.itemContainer} md>
           <Grid item md>
             <Lottie
               options={scaleOptions}
@@ -203,6 +224,88 @@ export default function CustomSoftware(props) {
             <Grid item>
               <Typography variant="body1" paragraph align="right">
                 Digital Documents & Data
+              </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        direction="row"
+        style={{ marginTop: "20em", marginBottom: "20em" }}
+      >
+        <Grid item container direction="column" alignItems="center">
+          <Grid item>
+            <img
+              src={roots}
+              alt="tree with roots extending out"
+              height="450em"
+              width="450em"
+            />
+          </Grid>
+          <Grid item className={classes.itemContainer}>
+            <Typography variant="h4" align="center" gutterBottom>
+              Root-Cause Analysis
+            </Typography>
+            <Typography variant="body1" align="center" paragraph>
+              Text 1 Text 1 Text 1 Text 1 Text 1 Text 1
+            </Typography>
+            <Typography variant="body1" align="center" paragraph>
+              Text 1
+            </Typography>
+          </Grid>
+        </Grid>
+      </Grid>
+      <Grid item container direction="row" justify="space-around">
+        <Grid item container className={classes.itemContainer} md>
+          <Grid item container direction="column" md>
+            <Grid item>
+              <Typography variant="h4">Automation</Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="body1" paragraph>
+                Automation
+              </Typography>
+              <Typography variant="body1" paragraph>
+                Automation
+              </Typography>
+              <Typography variant="body1" paragraph>
+                Automation
+              </Typography>
+            </Grid>
+          </Grid>
+          <Grid item md>
+            <Lottie
+              options={automationOptions}
+              isStopped={true}
+              style={{ maxHeight: 290, maxWidth: 280 }}
+            />
+          </Grid>
+        </Grid>
+        <Grid item container className={classes.itemContainer} md>
+          <Grid item md>
+            <Lottie
+              options={uxOptions}
+              isStopped={true}
+              style={{ maxHeight: 310, maxWidth: 155 }}
+            />
+          </Grid>
+          <Grid item container direction="column" md>
+            <Grid item>
+              <Typography variant="h4" align="right">
+                User Experience Design
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="body1" paragraph align="right">
+                User Experience Design
+              </Typography>
+              <Typography variant="body1" paragraph align="right">
+                User Experience Design
+              </Typography>
+              <Typography variant="body1" paragraph align="right">
+                User Experience Design
               </Typography>
             </Grid>
           </Grid>
