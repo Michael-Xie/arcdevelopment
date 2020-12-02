@@ -12,6 +12,8 @@ import Hidden from "@material-ui/core/Hidden";
 import backArrow from "../assets/backArrow.svg";
 import forwardArrow from "../assets/forwardArrow.svg";
 
+import integrationAnimation from "../animations/integrationAnimation/data.json";
+
 const useStyles = makeStyles((theme) => ({
   heading: {
     maxWidth: "40em",
@@ -35,6 +37,14 @@ export default function MobileApps(props) {
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 
+  const defaultOptions = {
+    loop: true,
+    autoPlay: true,
+    animationData: integrationAnimation,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
   return (
     <Grid container direction="column">
       <Grid
@@ -54,10 +64,13 @@ export default function MobileApps(props) {
             <IconButton
               style={{ backgroundColor: "transparent" }}
               component={Link}
-              to="/services"
-              onClick={() => props.setSelectedIndex(0)}
+              to="/customsoftware"
+              onClick={() => props.setSelectedIndex(1)}
             >
-              <img src={backArrow} alt="Back to Services Page" />
+              <img
+                src={backArrow}
+                alt="Back to Custom Software Development Page"
+              />
             </IconButton>
           </Grid>
         </Hidden>
@@ -84,13 +97,6 @@ export default function MobileApps(props) {
             >
               Text 2
             </Typography>
-            <Typography
-              align={matchesMD ? "center" : undefined}
-              variant="body1"
-              paragraph
-            >
-              Text 3
-            </Typography>
           </Grid>
         </Grid>
         <Hidden mdDown>
@@ -98,16 +104,47 @@ export default function MobileApps(props) {
             <IconButton
               style={{ backgroundColor: "transparent" }}
               component={Link}
-              to="/mobileapps"
-              onClick={() => props.setSelectedIndex(2)}
+              to="/websites"
+              onClick={() => props.setSelectedIndex(3)}
             >
               <img
                 src={forwardArrow}
-                alt="Forward to iOS/Android App Development"
+                alt="Forward to Website Development Page"
               />
             </IconButton>
           </Grid>
         </Hidden>
+      </Grid>
+      <Grid item container direction="row" className={classes.rowContainer}>
+        <Grid item container direction="column" md>
+          <Typography variant="h4" gutterBottom>
+            Integration
+          </Typography>
+          <Grid item>
+            <Typography variant="body1" paragraph>
+              Test test test
+            </Typography>
+            <Typography variant="body1" paragraph>
+              Test test test
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid item md>
+          <Lottie options={defaultOptions} isStopped={true} />
+        </Grid>
+        <Grid item container direction="column" md>
+          <Typography align="right" variant="h4" gutterBottom>
+            Simultaneous Platform Support
+          </Typography>
+          <Grid item>
+            <Typography align="right" variant="body1" paragraph>
+              Test test test
+            </Typography>
+            <Typography align="right" variant="body1" paragraph>
+              Test test test
+            </Typography>
+          </Grid>
+        </Grid>
       </Grid>
     </Grid>
   );
