@@ -11,6 +11,13 @@ import Hidden from "@material-ui/core/Hidden";
 
 import vision from "../assets/vision.svg";
 import consultation from "../assets/consultationIcon.svg";
+import mockup from "../assets/mockupIcon.svg";
+import review from "../assets/reviewIcon.svg";
+import design from "../assets/designIcon.svg";
+import build from "../assets/buildIcon.svg";
+import launch from "../assets/launchIcon.svg";
+import maintain from "../assets/maintainIcon.svg";
+import iterate from "../assets/iterateIcon.svg";
 import technologyAnimation from "../animations/technologyAnimation/data.json";
 
 import CallToAction from "./ui/CallToAction";
@@ -192,6 +199,380 @@ export default function Websites(props) {
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
           <img src={consultation} alt="handshake" />
+        </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        direction="row"
+        className={classes.rowContainer}
+        style={{ backgroundColor: "#ff7373", height: "90em" }}
+      >
+        <Grid item container direction="column" lg>
+          <Grid item>
+            <Typography
+              variant="h4"
+              gutterBottom
+              style={{ color: "#000", marginTop: "5em" }}
+            >
+              Mockup
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body Body body body
+            </Typography>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body
+            </Typography>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid item lg style={{ alignSelf: "center" }}>
+          <img src={mockup} alt="basic website design outline" />
+        </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        direction="row"
+        className={classes.rowContainer}
+        style={{ backgroundColor: "#39b54a", height: "90em" }}
+      >
+        <Grid item container direction="column" lg>
+          <Grid item>
+            <Typography
+              variant="h4"
+              gutterBottom
+              style={{ color: "#000", marginTop: "5em" }}
+            >
+              Review
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body Body body body
+            </Typography>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body
+            </Typography>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid item lg style={{ alignSelf: "center" }}>
+          <img src={review} alt="magnifying glass" />
+        </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        direction="row"
+        className={classes.rowContainer}
+        style={{ backgroundColor: "#a67c52", height: "90em" }}
+      >
+        <Grid item container direction="column" lg>
+          <Grid item>
+            <Typography
+              variant="h4"
+              gutterBottom
+              style={{ color: "#000", marginTop: "5em" }}
+            >
+              Design
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body Body body body
+            </Typography>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid item lg style={{ alignSelf: "center" }}>
+          <img src={design} alt="paintbrush leaving stroke of paint" />
+        </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        direction="row"
+        className={classes.rowContainer}
+        style={{ backgroundColor: "#39b54a", height: "90em" }}
+      >
+        <Grid item container direction="column" lg>
+          <Grid item>
+            <Typography
+              variant="h4"
+              gutterBottom
+              style={{ color: "#000", marginTop: "5em" }}
+            >
+              Review
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body Body body body
+            </Typography>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body
+            </Typography>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid item lg style={{ alignSelf: "center" }}>
+          <img src={review} alt="magnifying glass" />
+        </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        direction="row"
+        className={classes.rowContainer}
+        style={{ backgroundColor: "#fbb03b", height: "90em" }}
+      >
+        <Grid item container direction="column" lg>
+          <Grid item>
+            <Typography
+              variant="h4"
+              gutterBottom
+              style={{ color: "#000", marginTop: "5em" }}
+            >
+              Build
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body Body body body
+            </Typography>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body
+            </Typography>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body
+            </Typography>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body
+            </Typography>{" "}
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body
+            </Typography>{" "}
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid item lg style={{ alignSelf: "center" }}>
+          <img src={build} alt="building construction site" />
+        </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        direction="row"
+        className={classes.rowContainer}
+        style={{ backgroundColor: "#c1272d", height: "90em" }}
+      >
+        <Grid item container direction="column" lg>
+          <Grid item>
+            <Typography
+              variant="h4"
+              gutterBottom
+              style={{ color: "#000", marginTop: "5em" }}
+            >
+              Launch
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body Body body body
+            </Typography>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body
+            </Typography>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid item lg style={{ alignSelf: "center" }}>
+          <img src={launch} alt="rocket" />
+        </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        direction="row"
+        className={classes.rowContainer}
+        style={{ backgroundColor: "#8b45ce", height: "90em" }}
+      >
+        <Grid item container direction="column" lg>
+          <Grid item>
+            <Typography
+              variant="h4"
+              gutterBottom
+              style={{ color: "#000", marginTop: "5em" }}
+            >
+              Maintain
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body Body body body
+            </Typography>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body
+            </Typography>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid item lg style={{ alignSelf: "center" }}>
+          <img src={maintain} alt="wretch tightening bolts" />
+        </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        direction="row"
+        className={classes.rowContainer}
+        style={{ backgroundColor: "#29abe2", height: "90em" }}
+      >
+        <Grid item container direction="column" lg>
+          <Grid item>
+            <Typography
+              variant="h4"
+              gutterBottom
+              style={{ color: "#000", marginTop: "5em" }}
+            >
+              Iterate
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body Body body body
+            </Typography>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body
+            </Typography>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid item lg style={{ alignSelf: "center" }}>
+          <img src={iterate} alt="falling dominoes" />
         </Grid>
       </Grid>
     </Grid>
