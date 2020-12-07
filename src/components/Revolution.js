@@ -1,7 +1,6 @@
 import React from "react";
 import Lottie from "react-lottie";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
 
 import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
@@ -61,41 +60,70 @@ export default function Websites(props) {
   return (
     <Grid container direction="column">
       <Grid item className={classes.rowContainer} style={{ marginTop: "2em" }}>
-        <Typography variant="h2" style={{ fontFamily: "Pacifico" }}>
+        <Typography
+          align={matchesMD ? "center" : undefined}
+          variant="h2"
+          style={{ fontFamily: "Pacifico" }}
+        >
           The Revolution
         </Typography>
       </Grid>
       <Grid
         item
         container
-        direction="row"
+        direction={matchesMD ? "column" : "row"}
         alignItems="center"
         className={classes.rowContainer}
+        style={{ marginTop: "5em" }}
       >
         <Grid item lg>
           <img
             src={vision}
             alt="mountain through binoculars"
-            style={{ maxWidth: "40em", marginRight: "5em" }}
+            style={{
+              maxWidth: matchesSM ? 300 : "40em",
+              marginRight: matchesMD ? 0 : "5em",
+              marginBottom: matchesMD ? "5em" : 0,
+            }}
           />
         </Grid>
         <Grid item container direction="column" lg style={{ maxWidth: "40em" }}>
           <Grid item>
-            <Typography align="right" variant="h4" gutterBottom>
+            <Typography
+              align={matchesMD ? "center" : "right"}
+              variant="h4"
+              gutterBottom
+            >
               Vision
             </Typography>
           </Grid>
           <Grid item>
-            <Typography align="right" variant="body1" paragraph>
+            <Typography
+              align={matchesMD ? "center" : "right"}
+              variant="body1"
+              paragraph
+            >
               Body body body
             </Typography>
-            <Typography align="right" variant="body1" paragraph>
+            <Typography
+              align={matchesMD ? "center" : "right"}
+              variant="body1"
+              paragraph
+            >
               Body body body
             </Typography>
-            <Typography align="right" variant="body1" paragraph>
+            <Typography
+              align={matchesMD ? "center" : "right"}
+              variant="body1"
+              paragraph
+            >
               Body body body
             </Typography>
-            <Typography align="right" variant="body1" paragraph>
+            <Typography
+              align={matchesMD ? "center" : "right"}
+              variant="body1"
+              paragraph
+            >
               Body body body
             </Typography>
           </Grid>
@@ -104,38 +132,67 @@ export default function Websites(props) {
       <Grid
         item
         container
-        direction="row"
+        direction={matchesMD ? "column" : "row"}
         alignItems="center"
         className={classes.rowContainer}
+        style={{ marginTop: "10em", marginBottom: "10em" }}
       >
         <Grid item container direction="column" lg style={{ maxWidth: "40em" }}>
           <Grid item>
-            <Typography variant="h4" gutterBottom>
+            <Typography
+              align={matchesMD ? "center" : undefined}
+              variant="h4"
+              gutterBottom
+            >
               Technology
             </Typography>
           </Grid>
           <Grid item>
-            <Typography variant="body1" paragraph>
+            <Typography
+              align={matchesMD ? "center" : undefined}
+              variant="body1"
+              paragraph
+            >
               Body body body
             </Typography>
-            <Typography variant="body1" paragraph>
+            <Typography
+              align={matchesMD ? "center" : undefined}
+              variant="body1"
+              paragraph
+            >
               Body body body
             </Typography>
-            <Typography variant="body1" paragraph>
+            <Typography
+              align={matchesMD ? "center" : undefined}
+              variant="body1"
+              paragraph
+            >
               Body body body
             </Typography>
-            <Typography variant="body1" paragraph>
+            <Typography
+              align={matchesMD ? "center" : undefined}
+              variant="body1"
+              paragraph
+            >
               Body body body
             </Typography>
-            <Typography variant="body1" paragraph>
+            <Typography
+              align={matchesMD ? "center" : undefined}
+              variant="body1"
+              paragraph
+            >
               Body body body
             </Typography>
-            <Typography variant="body1" paragraph>
+            <Typography
+              align={matchesMD ? "center" : undefined}
+              variant="body1"
+              paragraph
+            >
               Body body body
             </Typography>
           </Grid>
         </Grid>
-        <Grid item container justify="flex-end" lg>
+        <Grid item container justify={matchesMD ? "center" : "flex-end"} lg>
           <Lottie
             options={defaultOptions}
             isStopped={true}
@@ -159,15 +216,22 @@ export default function Websites(props) {
       <Grid
         item
         container
-        direction="row"
+        direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
         style={{ backgroundColor: "#b3b3b3", height: "90em" }}
       >
-        <Grid item container direction="column" lg>
+        <Grid
+          item
+          container
+          direction="column"
+          alignItems={matchesMD ? "center" : undefined}
+          lg
+        >
           <Grid item>
             <Typography
               variant="h4"
               gutterBottom
+              align={matchesMD ? "center" : undefined}
               style={{ color: "#000", marginTop: "5em" }}
             >
               Consultation
@@ -176,6 +240,7 @@ export default function Websites(props) {
           <Grid item>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -183,6 +248,7 @@ export default function Websites(props) {
             </Typography>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -190,6 +256,7 @@ export default function Websites(props) {
             </Typography>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -198,20 +265,32 @@ export default function Websites(props) {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
-          <img src={consultation} alt="handshake" />
+          <img
+            src={consultation}
+            alt="handshake"
+            width="100%"
+            style={{ maxWidth: 700 }}
+          />
         </Grid>
       </Grid>
       <Grid
         item
         container
-        direction="row"
+        direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
         style={{ backgroundColor: "#ff7373", height: "90em" }}
       >
-        <Grid item container direction="column" lg>
+        <Grid
+          item
+          container
+          direction="column"
+          alignItems={matchesMD ? "center" : undefined}
+          lg
+        >
           <Grid item>
             <Typography
               variant="h4"
+              align={matchesMD ? "center" : undefined}
               gutterBottom
               style={{ color: "#000", marginTop: "5em" }}
             >
@@ -221,6 +300,7 @@ export default function Websites(props) {
           <Grid item>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -228,6 +308,7 @@ export default function Websites(props) {
             </Typography>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -235,6 +316,7 @@ export default function Websites(props) {
             </Typography>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -243,20 +325,32 @@ export default function Websites(props) {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
-          <img src={mockup} alt="basic website design outline" />
+          <img
+            src={mockup}
+            alt="basic website design outline"
+            width="100%"
+            style={{ maxWidth: 1000 }}
+          />
         </Grid>
       </Grid>
       <Grid
         item
         container
-        direction="row"
+        direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
         style={{ backgroundColor: "#39b54a", height: "90em" }}
       >
-        <Grid item container direction="column" lg>
+        <Grid
+          item
+          container
+          direction="column"
+          alignItems={matchesMD ? "center" : undefined}
+          lg
+        >
           <Grid item>
             <Typography
               variant="h4"
+              align={matchesMD ? "center" : undefined}
               gutterBottom
               style={{ color: "#000", marginTop: "5em" }}
             >
@@ -266,6 +360,7 @@ export default function Websites(props) {
           <Grid item>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -273,6 +368,7 @@ export default function Websites(props) {
             </Typography>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -280,6 +376,7 @@ export default function Websites(props) {
             </Typography>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -288,20 +385,27 @@ export default function Websites(props) {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
-          <img src={review} alt="magnifying glass" />
+          <img src={review} width="100%" alt="magnifying glass" />
         </Grid>
       </Grid>
       <Grid
         item
         container
-        direction="row"
+        direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
         style={{ backgroundColor: "#a67c52", height: "90em" }}
       >
-        <Grid item container direction="column" lg>
+        <Grid
+          item
+          container
+          direction="column"
+          alignItems={matchesMD ? "center" : undefined}
+          lg
+        >
           <Grid item>
             <Typography
               variant="h4"
+              align={matchesMD ? "center" : undefined}
               gutterBottom
               style={{ color: "#000", marginTop: "5em" }}
             >
@@ -311,6 +415,7 @@ export default function Websites(props) {
           <Grid item>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -318,6 +423,7 @@ export default function Websites(props) {
             </Typography>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -326,20 +432,32 @@ export default function Websites(props) {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
-          <img src={design} alt="paintbrush leaving stroke of paint" />
+          <img
+            src={design}
+            alt="paintbrush leaving stroke of paint"
+            width="100%"
+            style={{ maxWidth: 1000 }}
+          />
         </Grid>
       </Grid>
       <Grid
         item
         container
-        direction="row"
+        direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
         style={{ backgroundColor: "#39b54a", height: "90em" }}
       >
-        <Grid item container direction="column" lg>
+        <Grid
+          item
+          container
+          direction="column"
+          alignItems={matchesMD ? "center" : undefined}
+          lg
+        >
           <Grid item>
             <Typography
               variant="h4"
+              align={matchesMD ? "center" : undefined}
               gutterBottom
               style={{ color: "#000", marginTop: "5em" }}
             >
@@ -349,6 +467,7 @@ export default function Websites(props) {
           <Grid item>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -356,6 +475,7 @@ export default function Websites(props) {
             </Typography>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -363,6 +483,7 @@ export default function Websites(props) {
             </Typography>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -371,20 +492,27 @@ export default function Websites(props) {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
-          <img src={review} alt="magnifying glass" />
+          <img src={review} width="100%" alt="magnifying glass" />
         </Grid>
       </Grid>
       <Grid
         item
         container
-        direction="row"
+        direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
         style={{ backgroundColor: "#fbb03b", height: "90em" }}
       >
-        <Grid item container direction="column" lg>
+        <Grid
+          item
+          container
+          direction="column"
+          alignItems={matchesMD ? "center" : undefined}
+          lg
+        >
           <Grid item>
             <Typography
               variant="h4"
+              align={matchesMD ? "center" : undefined}
               gutterBottom
               style={{ color: "#000", marginTop: "5em" }}
             >
@@ -394,6 +522,7 @@ export default function Websites(props) {
           <Grid item>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -401,6 +530,7 @@ export default function Websites(props) {
             </Typography>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -408,6 +538,7 @@ export default function Websites(props) {
             </Typography>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -415,6 +546,7 @@ export default function Websites(props) {
             </Typography>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -422,13 +554,15 @@ export default function Websites(props) {
             </Typography>{" "}
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
               Body body body
-            </Typography>{" "}
+            </Typography>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -437,20 +571,32 @@ export default function Websites(props) {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
-          <img src={build} alt="building construction site" />
+          <img
+            src={build}
+            alt="building construction site"
+            width="100%"
+            style={{ maxWidth: matchesMD ? 750 : 1000 }}
+          />
         </Grid>
       </Grid>
       <Grid
         item
         container
-        direction="row"
+        direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
         style={{ backgroundColor: "#c1272d", height: "90em" }}
       >
-        <Grid item container direction="column" lg>
+        <Grid
+          item
+          container
+          direction="column"
+          alignItems={matchesMD ? "center" : undefined}
+          lg
+        >
           <Grid item>
             <Typography
               variant="h4"
+              align={matchesMD ? "center" : undefined}
               gutterBottom
               style={{ color: "#000", marginTop: "5em" }}
             >
@@ -460,6 +606,7 @@ export default function Websites(props) {
           <Grid item>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -467,6 +614,7 @@ export default function Websites(props) {
             </Typography>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -474,6 +622,7 @@ export default function Websites(props) {
             </Typography>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -482,20 +631,32 @@ export default function Websites(props) {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
-          <img src={launch} alt="rocket" />
+          <img
+            src={launch}
+            alt="rocket"
+            width="100%"
+            style={{ maxWidth: 200 }}
+          />
         </Grid>
       </Grid>
       <Grid
         item
         container
-        direction="row"
+        direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
         style={{ backgroundColor: "#8b45ce", height: "90em" }}
       >
-        <Grid item container direction="column" lg>
+        <Grid
+          item
+          container
+          direction="column"
+          alignItems={matchesMD ? "center" : undefined}
+          lg
+        >
           <Grid item>
             <Typography
               variant="h4"
+              align={matchesMD ? "center" : undefined}
               gutterBottom
               style={{ color: "#000", marginTop: "5em" }}
             >
@@ -505,6 +666,7 @@ export default function Websites(props) {
           <Grid item>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -512,6 +674,7 @@ export default function Websites(props) {
             </Typography>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -519,6 +682,7 @@ export default function Websites(props) {
             </Typography>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -527,20 +691,32 @@ export default function Websites(props) {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
-          <img src={maintain} alt="wretch tightening bolts" />
+          <img
+            src={maintain}
+            alt="wretch tightening bolts"
+            width="100%"
+            style={{ maxWidth: 500 }}
+          />
         </Grid>
       </Grid>
       <Grid
         item
         container
-        direction="row"
+        direction={matchesMD ? "column" : "row"}
         className={classes.rowContainer}
         style={{ backgroundColor: "#29abe2", height: "90em" }}
       >
-        <Grid item container direction="column" lg>
+        <Grid
+          item
+          container
+          direction="column"
+          alignItems={matchesMD ? "center" : undefined}
+          lg
+        >
           <Grid item>
             <Typography
               variant="h4"
+              align={matchesMD ? "center" : undefined}
               gutterBottom
               style={{ color: "#000", marginTop: "5em" }}
             >
@@ -550,6 +726,7 @@ export default function Websites(props) {
           <Grid item>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -557,6 +734,7 @@ export default function Websites(props) {
             </Typography>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -564,6 +742,7 @@ export default function Websites(props) {
             </Typography>
             <Typography
               variant="body1"
+              align={matchesMD ? "center" : undefined}
               paragraph
               style={{ color: "#fff", maxWidth: "20em" }}
             >
@@ -572,7 +751,7 @@ export default function Websites(props) {
           </Grid>
         </Grid>
         <Grid item lg style={{ alignSelf: "center" }}>
-          <img src={iterate} alt="falling dominoes" />
+          <img src={iterate} width="100%" alt="falling dominoes" />
         </Grid>
       </Grid>
     </Grid>
