@@ -16,6 +16,8 @@ import seo from "../assets/seo.svg";
 import outreach from "../assets/outreach.svg";
 import ecommerce from "../assets/ecommerce.svg";
 
+import CallToAction from "./ui/CallToAction";
+
 const useStyles = makeStyles((theme) => ({
   heading: {
     maxWidth: "40em",
@@ -40,6 +42,7 @@ export default function Websites(props) {
   const classes = useStyles();
   const theme = useTheme();
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
+  const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 
   //   const defaultOptions = {
@@ -121,14 +124,19 @@ export default function Websites(props) {
       <Grid
         item
         container
-        direction="row"
+        direction={matchesSM ? "column" : "row"}
         alignItems="center"
         className={classes.rowContainer}
+        style={{ marginTop: "15em" }}
       >
         <Grid item>
           <Grid container direction="column">
             <Grid item>
-              <Typography variant="h4" gutterBottom>
+              <Typography
+                align={matchesSM ? "center" : undefined}
+                variant="h4"
+                gutterBottom
+              >
                 Analytics
               </Typography>
             </Grid>
@@ -141,11 +149,139 @@ export default function Websites(props) {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item>
-          <Typography variant="body1" className={classes.paragraphContainer}>
+        <Grid item className={classes.paragraphContainer}>
+          <Typography align={matchesSM ? "center" : undefined} variant="body1">
             Body body body
           </Typography>
         </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        direction={matchesSM ? "column" : "row"}
+        alignItems="center"
+        justify="flex-end"
+        className={classes.rowContainer}
+        style={{ marginBottom: "15em", marginTop: "15em" }}
+      >
+        <Grid item>
+          <Grid container direction="column">
+            <Grid item>
+              <Typography variant="h4" align="center" gutterBottom>
+                E-commerce
+              </Typography>
+            </Grid>
+            <Grid item>
+              <img src={ecommerce} alt="world outline made of dollar signs" />
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid
+          item
+          style={{ marginLeft: matchesSM ? 0 : "1em" }}
+          className={classes.paragraphContainer}
+        >
+          <Typography
+            align={matchesSM ? "center" : undefined}
+            variant="body1"
+            paragraph
+          >
+            Body body body
+          </Typography>
+          <Typography
+            align={matchesSM ? "center" : undefined}
+            variant="body1"
+            paragraph
+          >
+            Body body body
+          </Typography>
+        </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        direction={matchesSM ? "column" : "row"}
+        alignItems="center"
+        className={classes.rowContainer}
+      >
+        <Grid item>
+          <Grid container direction="column">
+            <Grid item>
+              <Typography
+                variant="h4"
+                align={matchesSM ? "center" : undefined}
+                gutterBottom
+              >
+                Outreach
+              </Typography>
+            </Grid>
+            <Grid item>
+              <img src={outreach} alt="megaphone" />
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid
+          item
+          style={{ marginLeft: matchesSM ? 0 : "1em" }}
+          className={classes.paragraphContainer}
+        >
+          <Typography align={matchesSM ? "center" : undefined} variant="body1">
+            Body body body
+          </Typography>
+        </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        direction={matchesSM ? "column" : "row"}
+        alignItems="center"
+        justify="flex-end"
+        className={classes.rowContainer}
+        style={{ marginTop: "15em", marginBottom: "15em" }}
+      >
+        <Grid item>
+          <Grid container direction="column">
+            <Grid item>
+              <Typography variant="h4" align="center" gutterBottom>
+                Search Engine
+                <br /> Optimization
+              </Typography>
+            </Grid>
+            <Grid item>
+              <img src={seo} alt="website standing on winner's podium" />
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid
+          item
+          style={{ marginLeft: matchesSM ? 0 : "1em" }}
+          className={classes.paragraphContainer}
+        >
+          <Typography
+            align={matchesSM ? "center" : undefined}
+            variant="body1"
+            paragraph
+          >
+            Body body body
+          </Typography>
+          <Typography
+            align={matchesSM ? "center" : undefined}
+            variant="body1"
+            paragraph
+          >
+            Body body body
+          </Typography>
+          <Typography
+            align={matchesSM ? "center" : undefined}
+            variant="body1"
+            paragraph
+          >
+            Body body body
+          </Typography>
+        </Grid>
+      </Grid>
+      <Grid item>
+        <CallToAction setValue={props.setValue} />
       </Grid>
     </Grid>
   );
