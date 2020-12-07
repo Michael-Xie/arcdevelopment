@@ -3,10 +3,8 @@ import Lottie from "react-lottie";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 
 import Grid from "@material-ui/core/Grid";
-import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import Hidden from "@material-ui/core/Hidden";
 
 import vision from "../assets/vision.svg";
 import consultation from "../assets/consultationIcon.svg";
