@@ -10,6 +10,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Hidden from "@material-ui/core/Hidden";
 
 import vision from "../assets/vision.svg";
+import consultation from "../assets/consultationIcon.svg";
 import technologyAnimation from "../animations/technologyAnimation/data.json";
 
 import CallToAction from "./ui/CallToAction";
@@ -133,6 +134,64 @@ export default function Websites(props) {
             isStopped={true}
             style={{ maxWidth: "40em", margin: 0 }}
           />
+        </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        direction="row"
+        justify="center"
+        className={classes.rowContainer}
+      >
+        <Grid item>
+          <Typography variant="h4" gutterBottom>
+            Process
+          </Typography>
+        </Grid>
+      </Grid>
+      <Grid
+        item
+        container
+        direction="row"
+        className={classes.rowContainer}
+        style={{ backgroundColor: "#b3b3b3", height: "90em" }}
+      >
+        <Grid item container direction="column" lg>
+          <Grid item>
+            <Typography
+              variant="h4"
+              gutterBottom
+              style={{ color: "#000", marginTop: "5em" }}
+            >
+              Consultation
+            </Typography>
+          </Grid>
+          <Grid item>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body Body body body
+            </Typography>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body
+            </Typography>
+            <Typography
+              variant="body1"
+              paragraph
+              style={{ color: "#fff", maxWidth: "20em" }}
+            >
+              Body body body
+            </Typography>
+          </Grid>
+        </Grid>
+        <Grid item lg style={{ alignSelf: "center" }}>
+          <img src={consultation} alt="handshake" />
         </Grid>
       </Grid>
     </Grid>
