@@ -1,4 +1,6 @@
 import React from "react";
+import ReactGA from "react-ga";
+
 import Lottie from "react-lottie";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
@@ -160,7 +162,13 @@ export default function LandingPage(props) {
                   variant="contained"
                   component={Link}
                   to="/estimate"
-                  onClick={() => props.setValue(5)}
+                  onClick={() => {
+                    props.setValue(5);
+                    ReactGA.event({
+                      category: "Estimate",
+                      action: "Home Page Pressed",
+                    });
+                  }}
                 >
                   Free Estimate
                 </Button>

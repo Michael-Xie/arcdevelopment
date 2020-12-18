@@ -251,7 +251,13 @@ export default function Header(props) {
         className={classes.button}
         component={Link}
         to="/estimate"
-        onClick={() => props.setValue(5)}
+        onClick={() => {
+          props.setValue(5);
+          ReactGA.event({
+            category: "Estimate",
+            action: "Desktop Header Pressed",
+          });
+        }}
       >
         Free Estimate
       </Button>
@@ -322,6 +328,10 @@ export default function Header(props) {
             onClick={() => {
               setOpenDrawer(false);
               props.setValue(5);
+              ReactGA.event({
+                category: "Estimate",
+                action: "Mobile Header Pressed",
+              });
             }}
             divider
             button
