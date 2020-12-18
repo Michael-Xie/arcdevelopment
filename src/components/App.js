@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactGA from "react-ga";
 import { ThemeProvider } from "@material-ui/core/styles";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
@@ -12,6 +13,8 @@ import MobileApps from "./MobileApps";
 import Websites from "./Websites";
 import Revolution from "./Revolution";
 import About from "./About";
+
+ReactGA.initialize("UA-185668821-1");
 
 function App() {
   const [selectedIndex, setSelectedIndex] = useState(0);

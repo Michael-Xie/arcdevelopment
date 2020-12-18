@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from "react";
+import ReactGA from "react-ga";
+
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
@@ -130,6 +132,8 @@ export default function Header(props) {
   const [anchorEl, setAnchoEl] = useState(null);
   const [openMenu, setOpenMenu] = useState(false);
 
+  const [previousURL, setPreviousURL] = useState("");
+
   const handleChange = (e, newValue) => {
     props.setValue(newValue);
   };
@@ -187,6 +191,10 @@ export default function Header(props) {
   ];
 
   useEffect(() => {
+    if (previousURL !== window.location.pathname) {
+      setPreviousURL(window.location.pathname);
+      ReactGA.pageview(window.location.pathname + window.location.search);
+    }
     [...menuOptions, ...routes].forEach((route) => {
       switch (window.location.pathname) {
         case `${route.link}`:
@@ -207,7 +215,14 @@ export default function Header(props) {
           break;
       }
     });
-  }, [props.value, menuOptions, props.selectedIndex, routes]);
+  }, [
+    props.value,
+    menuOptions,
+    props.selectedIndex,
+    routes,
+    props,
+    previousURL,
+  ]);
 
   const tabs = (
     <React.Fragment>
